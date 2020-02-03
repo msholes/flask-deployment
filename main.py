@@ -9,11 +9,10 @@ APP_VERSION = 4.0
 def hello_world():
     return 'Hello, My name is Michael and I Like AI and ML!'
 
-@app.route('/json/<value>')
-def ajson(value):
-    return jsonify({"json": value})
-
-
+@app.route('/name/<value>')
+def name(value):
+    val = {"value": value}
+    return jsonify(val)
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
